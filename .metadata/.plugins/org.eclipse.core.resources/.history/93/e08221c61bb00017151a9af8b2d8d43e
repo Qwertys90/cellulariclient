@@ -1,0 +1,37 @@
+package com.example.demo.services;
+
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.models.Persona;
+@Service
+public class PersonaServiceImpl implements PersonaService{
+
+	@Override
+	public Persona saveOrUpdatePersona(Persona persona) {
+	return saveOrUpdatePersona(persona);
+	}
+
+	@Override
+	public Persona findById(int id) {
+		return findById(id);
+	}
+
+	@Override
+	public List<Persona> findAll() {
+		return findAll();
+	}
+
+	@Override
+	public void deletePersona(int id) {
+		deletePersona(id);
+	}
+
+	@Override
+	public List<Persona> findByProfessione(String professione) {
+		return findByProfessione(professione);
+	}
+
+}

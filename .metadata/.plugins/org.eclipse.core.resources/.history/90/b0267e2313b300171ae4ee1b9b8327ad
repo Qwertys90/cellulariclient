@@ -1,0 +1,28 @@
+package it.dstech.model;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Album {
+	@Id
+	@GeneratedValue
+	private int id;
+	
+	private String titolo;
+	@OneToMany(mappedBy="album")	
+	@JoinColumn(name="ALBUM_ID")
+	private List<Brano> listaBrani;
+	
+	private Artista artista;
+	
+	private int durata;
+}

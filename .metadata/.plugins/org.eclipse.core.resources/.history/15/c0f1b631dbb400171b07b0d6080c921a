@@ -1,0 +1,20 @@
+package it.dstech.services;
+
+import java.util.List;
+
+
+public interface ContactService {
+
+	Contact saveContact(Contact contact, int id);
+
+	Contact getContactById(int id);
+
+	List<Contact> getListContact();
+
+	Contact updateContact(Contact contact);
+
+	Contact deleteContact(int id);
+	
+	List<Contact> getListContactsByUserId(int id);
+
+}

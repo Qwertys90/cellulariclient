@@ -1,0 +1,7 @@
+package it.dstech.services;
+
+import it.dstech.model.User;
+
+public class UserServiceImpl {
+
+}

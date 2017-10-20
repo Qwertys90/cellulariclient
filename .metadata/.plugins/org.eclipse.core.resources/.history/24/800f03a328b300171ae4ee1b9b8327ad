@@ -1,0 +1,22 @@
+package it.dstech.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import it.dstech.services.AlbumService;
+import it.dstech.services.ArtistaService;
+
+@RestController
+@RequestMapping("/artista")
+public class ArtistaController {
+	
+	@Autowired
+	private ArtistaService artistaService;
+
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	
+}

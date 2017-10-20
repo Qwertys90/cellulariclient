@@ -1,0 +1,17 @@
+package it.dstech.services;
+
+import java.util.List;
+
+import it.dstech.models.Cellulare;
+
+public interface CellulareService {
+	
+	Cellulare findById(int id);
+	
+	Cellulare saveOrUpdateCellulare(Cellulare cellulare);
+	
+	List<Cellulare> findAll();
+	
+	void deleteCellulare(int id);
+	
+}

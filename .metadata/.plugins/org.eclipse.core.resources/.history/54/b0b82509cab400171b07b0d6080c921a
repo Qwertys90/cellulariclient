@@ -1,0 +1,16 @@
+package it.dstech.repository;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import it.dstech.models.Cellulare;
+import it.dstech.models.User;
+
+public interface CellulareRepository extends CrudRepository<Cellulare, Integer> {
+
+	Cellulare findById(int id);
+	
+	List<Cellulare> findByUserj_Id(int id);
+	
+}

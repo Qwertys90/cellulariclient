@@ -1,0 +1,22 @@
+package it.dstech.services;
+
+import java.util.List;
+
+import it.dstech.models.Prodotto;
+import it.dstech.models.User;
+
+public interface ProdottoService {
+
+	Prodotto saveProdotto(Prodotto prodotto, int id);
+
+	Prodotto getProdottoById(int id);
+
+	List<Prodotto> getListProdotto();
+
+	Prodotto updateProdotto(Prodotto prodotto);
+
+	Prodotto deleteProdotto(int id);
+	
+	List<Prodotto> getListProdottosByUserId(int id);
+
+}

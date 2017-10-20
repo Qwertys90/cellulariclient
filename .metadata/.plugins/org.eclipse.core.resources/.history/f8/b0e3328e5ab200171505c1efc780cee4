@@ -1,0 +1,17 @@
+package it.dstech.service;
+
+import java.util.ArrayList;
+
+import it.dstech.model.Contact;
+
+public interface ContactService {
+
+	Contact saveContact(Contact contact, int idUser);
+
+	ArrayList<Contact> getListContactsByUserId(int idUser);
+
+	Contact getContactById(int idUser);
+
+	void deleteContact(Contact contact);
+
+}

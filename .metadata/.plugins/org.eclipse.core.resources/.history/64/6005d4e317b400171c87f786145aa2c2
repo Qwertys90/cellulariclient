@@ -1,0 +1,8 @@
+package it.dstech.services;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class CellulareServiceImpl implements CellulareService {
+
+}

@@ -1,0 +1,42 @@
+package it.dstech.repository;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.repository.PersonaRepository;
+
+import it.dstech.model.Prodotto;
+
+@Service
+public class ProdottoServiceImpl implements ProdottoService{
+
+	@Autowired
+	ProdottoRepository prodottoRepository;
+	
+	@Override
+	public Prodotto saveOrUpdateProdotto(Prodotto prodotto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Prodotto findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Prodotto> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteProdotto(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

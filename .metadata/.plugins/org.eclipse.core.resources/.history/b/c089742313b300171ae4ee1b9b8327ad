@@ -1,0 +1,24 @@
+package it.dstech.model;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Artista {
+@Id
+@GeneratedValue
+private int id;
+
+private String nome;
+
+private String cognome;
+@OneToMany(mappedBy="album")
+private List<Album> listAlbum;
+@OneToMany(mappedBy="brani")
+private List<Brano> listBrani;
+
+}

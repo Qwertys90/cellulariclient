@@ -1,0 +1,78 @@
+package it.dstech.services;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import it.dstech.dao.ContactDao;
+import it.dstech.dao.ContactDaoImpl;
+import it.dstech.models.Contact;
+import it.dstech.models.User;
+
+
+public class ContactServiceImpl implements ContactService{
+
+
+	@Override
+		public Contact saveContact(Contact contact, int idUser) {
+			try {
+				URL url = new URL("http://localhost:8081/contact/saveOrUpdateContact/" + idUser);
+				HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+				conn.setDoOutput(true);
+				conn.setRequestMethod("POST");
+				conn.setRequestProperty("Content-Type", "application/json");
+				ObjectMapper mapper = new ObjectMapper();
+				String jsonInString = mapper.writeValueAsString(contact);
+				OutputStream os = conn.getOutputStream();
+				os.write(jsonInString.getBytes());
+				os.flush();
+
+				if (conn.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
+					throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
+				}
+				BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+				String output;
+				StringBuffer response = new StringBuffer();
+				while ((output = br.readLine()) != null) {
+					logger.info(output);
+					response.append(output);
+				}
+				String risposta = response.toString();
+				ObjectMapper responseMapper = new ObjectMapper();
+				return responseMapper.readValue(risposta, Contact.class);
+			} catch (Exception e) {
+				logger.warning(e.getMessage());
+				return null;
+			}
+		}
+	
+
+	@Override
+	public Contact getContactById(int id) {
+		return dao.getContactById(id);
+	}
+
+	@Override
+	public List<Contact> getListContact() {
+		return dao.getListContact();
+	}
+
+	@Override
+	public Contact deleteContact(int id) {
+		return dao.deleteContact(id);
+	}
+
+	@Override
+	public Contact updateContact(Contact contact) {
+		return dao.updateContact(contact);
+	}
+	public List<Contact> getContact(User user) {
+		return (List<Contact>) dao.getContact(user);
+	}
+
+}

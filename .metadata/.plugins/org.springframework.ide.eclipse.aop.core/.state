@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="MyContactApi"/>
+<aop-project name="cellulari"/>
+<aop-project name="BootExample"/>
+<aop-project name="persona"/>
+<aop-project name="product"/>
+<aop-project name="rubricaserver"/>
+<aop-project name="feltrinelli"/>
+</aop-reference-model>
